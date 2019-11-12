@@ -9,9 +9,9 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Serif+KR&display=swap" rel="stylesheet">
     <title>workroom8363</title>
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="/js/slider.js"></script>
-    <script src="/js/onedayclass.js"></script>
-    <script src="/js/scrolltrigger.js"></script>
+    <!-- <script src="/js/onedayclass.js"></script> -->
+    <script src="/ScrollTrigger-master/ScrollTrigger.min.js"></script>
+    <script src="js/scrolltrigger.js"></script>
     <!-- <script src="./js/load-image-orientation.js"></script> -->
 
 </head>
@@ -26,14 +26,14 @@
         <!--메뉴바-->
         <ul>
             <li><a href="/aboutus.html">About Us</a></li>
-            <li><a href="#">Object</a></li>
+            <li><a href="/object.html">Object</a></li>
             <li><a href="/onedayclass.html">Oneday Class</a></li>
             <li><a href="#">Q & A</a></li>
             <li><a href="http://www.insgain.com/user/workroom8363/10239485071" target="_blank"><img src="/image/insta.png" alt="instagram"></a></li>
         </ul>
         
     </nav>
-    </div>
+    
     <div class="onedayclass_container">
 
         <div>
@@ -41,10 +41,10 @@
         </div>
 
     
-    <div class='bigPictureWrapper'>
+    <!-- <div class='bigPictureWrapper'>
         <div class='bigPicture'>
         </div>
-    </div>
+    </div> -->
     <div class="pictures">
         <img src="/onedayimage/onday(1).jpg">
         <img src="/onedayimage/onday(2).jpg">
@@ -80,28 +80,79 @@
         <img src="/onedayimage/onday(32).jpg">
 
         </div>
-    </div> 
+    
     <!-- scrolltrigger 사용하여 페이지 내릴때마다 나타나게 구현하기 -->
-    <div data-scroll>
+    
     <div class="slice_menu" ></div>
-    <div class="onedayclass_subheading"><h1>원데이 클래스는 이렇게 진행됩니다.</h1></div>
+   
 
-    <div class="ondayclass_explan">
+    <div class="ondayclass_explan" data-scroll>
         <div class="class_procedure">
-            <h2>강의 소개</h2>
-            <p>재료 사용법</p>
-            <p>도안 보는 법</p>
-            <h2>실습하기</h2>
-            <p>백스티치</p>
-            <p>체인스티치</p>
-            <p>스미느라 스티치</p>
-            <h2>마무리</h2>
-            <p>액자 끼워보기</p>
+            <h1>원데이 클래스는 이렇게 진행됩니다.</h1>
+            <img src="/image/sequence.jpg">
+            </br>
+            </br>
+            <h2>＊ 원데이 클래스는 인스타그램 DM으로만 문의 받습니다. </h2>
         </div>
-        <img src="/image/makingDaemsa.jpg">
+
     </div>
+    <div class="slice_menu" ></div>
+    <div class="onedayclass_schedule">
+        <h1>원데이 클래스 일정</h1>
+        <img src="" alt="">
     </div>
 
+
+
+    <div class="slice_menu" ></div>
+    <div class="onedayclass_map" data-scroll>
+        <div class="map_naver">
+            <h1>찾아오시는 길</h1>
+            </br>
+            </br>
+            <img src="/image/mapWorkRoom8363.png" alt="map">
+            <h2>＊  주소 : 대구광역시 중구 봉산문화2길 14 2층 </h2>
+        </div>
+    </div>
+    <footer>
+            <div class="footer_container">
+                <ul class="shop_pre">
+                    <li>
+                        <pre>
+    010-5695-2014
+    MON - FRI : 11AM - 6PM
+    BREAKTIME : 1PM - 2PM
+    SAT SUN HOLIDAY OFF
+    국민 00000-01-0000
+    심대명(WORKROOM8363))
+                        </pre>
+    
+                    </li>
+                </ul>
+                <ul class="shop_info">
+                    <li>
+                        COMPANY : WORKROOM8363 . CEO . CPO : SSIM DAE MYOUNG
+                    </br>
+                        ADDRESS : 3F, 30, EUNHAENG-RO 218BEON-GIL, SIHEUNG-SI, GYEONGGI-DO, REPUBLIC OF KOREA
+                    </br>
+                        BUSINESS LICENSE : 405-10-98106
+                    
+                    </br>    
+                        COPYRIGHT (C) WORKROOM8363
+                    </li>
+                </ul>
+                <ul class="footer_link">
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">OBJECT</a></li>
+                    <li><a href="#">ONEDAYCLASS</a></li>
+                    <li><a href="#">Q&A</a></li>
+                </ul>
+    
+            </div>
+        </footer>
+
+</div> 
+</div>
    
 </body>
 </html>
