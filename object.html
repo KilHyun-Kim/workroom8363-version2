@@ -13,7 +13,49 @@
     <script src="/ScrollTrigger-master/ScrollTrigger.min.js"></script>
     <script src="js/scrolltrigger.js"></script>
     <!-- <script src="./js/load-image-orientation.js"></script> -->
+    <script>
 
+    // function fetchPage(name){
+    //     fetch(name).then(function(response){
+    //         response.text().then(function(text){
+
+    //         document.querySelector('.object_list').innerHTML = text;
+    //         })
+    //     });
+    // }
+        
+    fetch('object_list').then(function(response){
+        response.text().then(function(text){
+            console.log(text);
+
+            var items = text.split(',');
+            console.log(items);
+            var i = 0;
+            var j = 0;
+            var tags = '';
+            while (i<items.length){
+                var item =  items[i];
+                var tag = '<li><div class="product_listArray"><a href="object_detail'+j+'.html"><img src="'
+                +items[i]+
+                '"</a></div><div class="product_info"><ul class="name"><li><span>'
+                +items[i+1]+
+                '</span></li></ul><ul class="price"><li><span>'
+                +items[i+2]+
+                '</span></li></ul></div></li>'
+                tags = tags + tag;
+                i = i + 3;
+                j = j + 1;
+            }
+            document.querySelector('.product_list').innerHTML = tags;
+        })
+    });
+
+    // object_list.txt에 이미지경로/이름/가격 순으로 기입할경우 상품추가가능
+    // a 태그에 fetch 함수 경로를 넣어서 다날리고 그 이미지 하나만 넣는느낌으로 가면 어떰?
+    // object_detail.html 의 순서에 맞게 만들어서 맞춤, 자동으로 만드는법 찾아보기.
+
+        
+    </script>
 </head>
 <body>
     <div class="container">
@@ -26,97 +68,22 @@
         <!--메뉴바-->
         <ul>
             <li><a href="/aboutus.html">About Us</a></li>
-            <li><a href="#">Object</a></li>
+            <li><a href="object.html">Object</a></li>
             <li><a href="/onedayclass.html">Oneday Class</a></li>
             <li><a href="#">Q & A</a></li>
-            <li><a href="http://www.insgain.com/user/workroom8363/10239485071" target="_blank"><img src="/image/insta.png" alt="instagram"></a></li>
+            <li><a href="https://www.instagram.com/workroom8363/?igshid=1b6l8y8av4fq4" target="_blank"><img src="/image/insta.png" alt="instagram"></a></li>
         </ul>
         
     </nav>
+    <div>
+        <h2>Object</h2>
+    </div>
 
     <div class="object_container">
         <div class="object_list">
-            <ul class="product_list">
-                <li>
-                    <div class="product_listArray">
-                    <a href="#">
-                            <img src="image/KakaoTalk_20190929_190847442_05.jpg">
-                    </a>
-                    </div>
-                    <div class="product_info">
-                        <ul class="name">
-                            <li>
-                                <span>wallet_pink</span>
-                            </li>
-                        </ul>
-                        <ul class="price">
-                            <li>
-                                <span>KRW 15,000</span>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <div class="product_listArray">
-                    <a href="#">
-                            <img src="image/KakaoTalk_20190929_190847442_05.jpg">
-                    </a>
-                    </div>
-                    <div class="product_info">
-                        <ul class="name">
-                            <li>
-                                <span>wallet_pink</span>
-                            </li>
-                        </ul>
-                        <ul class="price">
-                            <li>
-                                <span>KRW 15,000</span>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <div class="product_listArray">
-                    <a href="#">
-                            <img src="image/KakaoTalk_20190929_190847442_05.jpg">
-                    </a>
-                    </div>
-                    <div class="product_info">
-                        <ul class="name">
-                            <li>
-                                <span>wallet_pink</span>
-                            </li>
-                        </ul>
-                        <ul class="price">
-                            <li>
-                                <span>KRW 15,000</span>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <div class="product_listArray">
-                    <a href="#">
-                            <img src="image/KakaoTalk_20190929_190847442_05.jpg">
-                    </a>
-                    </div>
-                    <div class="product_info">
-                        <ul class="name">
-                            <li>
-                                <span>wallet_pink</span>
-                            </li>
-                        </ul>
-                        <ul class="price">
-                            <li>
-                                <span>KRW 15,000</span>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+            <ul class="product_list">    
             </ul>
-
         </div>
-
     </div>
 
     <footer>
@@ -161,3 +128,23 @@
    
 </body>
 </html>
+
+<!-- <li>
+    <div class="product_listArray">
+    <a href="#">
+            <img src="image/KakaoTalk_20190929_190847442_05.jpg">
+    </a>
+    </div>
+    <div class="product_info">
+        <ul class="name">
+            <li>
+                <span>wallet_pink</span>
+            </li>
+        </ul>
+        <ul class="price">
+            <li>
+                <span>KRW 15,000</span>
+            </li>
+        </ul>
+    </div>
+    </li> -->
