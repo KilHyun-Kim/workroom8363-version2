@@ -181,8 +181,9 @@ body{
 
 }
 
-.onedayclass_container h2,h1{
-    margin : 50px 0px;
+.onedayclass_container h1{
+    margin : 0 auto;
+    font-size: 30px;
     font-family:'Noto Serif KR', serif;
 }
 /* .bigPictureWrapper {
@@ -248,10 +249,10 @@ body{
 }
 
 .ondayclass_explan .class_procedure {
-    margin: 40px auto;
+    margin: 80px auto;
 }
-.ondayclass_explan .class_procedure>h2{
-    margin:0px;
+.ondayclass_explan h1, .onedayclass_map h1, .onedayclass_schedule h1{
+    margin:50px auto;
 }
 
 
@@ -285,12 +286,15 @@ footer {
 .footer_container ul {
 display: inline-block;
 }
+
 .footer_container .shop_pre{
     float: left;
     margin-left: 30px;
+    
 }
+
 .footer_container .shop_info{
-    margin-left: 150px;
+    margin-left: 80px;
 }
 
 .footer_container .footer_link{
@@ -411,4 +415,10 @@ display: inline-block;
     line-height: 18px;
     text-align: center;
 }
+/*  Q & A */
 
+.qnaclass_container h2{
+
+    margin : 50px 10px;
+    
+}

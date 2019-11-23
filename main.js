@@ -5,8 +5,9 @@ const template = require('./lib/template.js');
 app.use(express.static(__dirname +'/public'));
 app.get('/', function(request, response){
     var title = 'Welcome';
+    var script = '';
     //var list = template.list(filelist);
-    var html = template.HTML(title,
+    var html = template.HTML(title,script,
         body=`
         <div class="slideshow">
         <div class="slideshow_slides">
@@ -47,7 +48,8 @@ app.get('/', function(request, response){
 
 app.get('/aboutus', function(request,response){
     var title = ' about us ';
-    var html = template.HTML(title,
+    var script = '';
+    var html = template.HTML(title,script,
         body = `
         <div class="aboutus_container">
 
@@ -91,7 +93,36 @@ app.get('/aboutus', function(request,response){
 });
 app.get('/object', function(request,response){
     var title = ' object';
-    var html = template.HTML(title,
+    var script = `
+    <script>
+        
+    fetch('object_list').then(function(response){
+        response.text().then(function(text){
+            
+            var items = text.split(',');
+            
+            var i = 0;
+            var j = 0;
+            var tags = '';
+            while (i<items.length){
+                var item =  items[i];
+                var tag = '<li><div class="product_listArray"><a href="'+j+'"><img src="'
+                +items[i]+
+                '"</a></div><div class="product_info"><ul class="name"><li><span>'
+                +items[i+1]+
+                '</span></li></ul><ul class="price"><li><span>'
+                +items[i+2]+
+                '</span></li></ul></div></li>'
+                tags = tags + tag;
+                i = i + 3;
+                j = j + 1;
+            }
+            document.querySelector('.product_list').innerHTML = tags;
+        })
+    });
+    </script>
+    `
+    var html = template.HTML(title,script,
         body = `
         <div>
         <h2>Object</h2>
@@ -106,9 +137,11 @@ app.get('/object', function(request,response){
         `);
         response.send(html);
 });
-app.get('/object/0', function(request,response){
+app.get('/0', function(request,response){
     var title = '';
+    var script = '';
     var html = template.HTML(title,
+        script,
         body = `
         <div>
         <h2>Detail Object</h2>
@@ -178,7 +211,8 @@ app.get('/object/0', function(request,response){
 
 app.get('/onedayclass', function(request,response){
     var title = ' - onedayclass';
-    var html = template.HTML(title,
+    var script = '';
+    var html = template.HTML(title,script,
         body=`
         <div class="onedayclass_container">
 
@@ -229,7 +263,7 @@ app.get('/onedayclass', function(request,response){
     
     <!-- scrolltrigger 사용하여 페이지 내릴때마다 나타나게 구현하기 -->
     
-    <div class="slice_menu" ></div>
+    
    
 
     <div class="ondayclass_explan" data-scroll>
@@ -242,7 +276,6 @@ app.get('/onedayclass', function(request,response){
         </div>
 
     </div>
-    <div class="slice_menu" ></div>
     <div class="onedayclass_schedule" data-scroll   >
         <h1>원데이 클래스 일정</h1>
         <img src="" alt="">
@@ -250,7 +283,6 @@ app.get('/onedayclass', function(request,response){
 
 
 
-    <div class="slice_menu" ></div>
     <div class="onedayclass_map" data-scroll>
         <div class="map_naver">
             <h1>찾아오시는 길</h1>
@@ -260,8 +292,64 @@ app.get('/onedayclass', function(request,response){
             <h2>＊  주소 : 대구광역시 중구 봉산문화2길 14 2층 </h2>
         </div>
     </div>
+    </div>
         `);
         response.send(html);
+});
+
+
+app.get('/qna', function(request,response){
+    var title = ' ';
+    var script = ' <script src="js/bootstrap.js"></script><link rel="stylesheet" href="css/bootstrap.css">'
+    var html = template.HTML(title,script,
+        body=`
+        <div class="qnaclass_container">
+        
+        <div>
+            <h2>Question</h2>
+        </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>자주 묻는 질문</th>
+                <th>작성자</th>
+                <th>날짜</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>4</td>
+                <td><a href="">질문 할 수 있는 게시판은 없나요?</a></td>
+                <td>관리자</td>
+                <td>2019.11.23</td>
+            </tr>
+            <tr>
+                <td>3</a></td>
+                <td><a href="">상품을 인터넷으로 주문할수는 없나요?</a></td>
+                <td>관리자</td>
+                <td>2019.11.23</td>
+            
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="">원데이 클래스 신청은 어떻게 하나요?</a></td>
+                <td>관리자</td>
+                <td>2019.11.23</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><a href="">상품을 사려면 어떻게 해야하나요?</a></td>
+                <td>관리자</td>
+                <td>2019.11.23</td>
+            </tr>
+            
+        </tbody>
+    </table>
+    </div>
+    `);
+    response.send(html);
 });
 
 app.listen(3000, ()=> console.log('port 3000!'))
