@@ -13,13 +13,11 @@ $(function(){
 
         // 슬라이드를 가로로 배열
         // slides 마다 할일 , left 0% 100% 200% 300%
-        console.log(slides); 
         slides.each(function(i){
             var newLeft = i * 100 +'%';
             $(this).css({left:newLeft});
             //<a href="">1</a>
             indicatorHtml += '<a href="">'+(i+1)+'</a>';
-            console.log(indicatorHtml);
         });// slides.each
 
         indicator.html(indicatorHtml);
@@ -30,7 +28,6 @@ $(function(){
             slideGroup.animate({left:-100*index + '%'},
             duration);
             currentIndex = index;
-            console.log(currentIndex);
 
             updateNav(); // 처음인지, 마지막인지 검사
         

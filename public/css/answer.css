@@ -1,0 +1,28 @@
+.container{
+    position: relative;
+    border: 1px solid #ddd;
+    margin: 0 auto ;
+    width: 70%;
+    line-height: 180%;
+    font-size:11px;
+
+}
+.board_wrap{
+    position: relative;
+    width: 92%;
+    margin: 40px auto;
+}
+.board_top{
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 40px;
+    vertical-align: bottom;
+}
+.board_detail{
+    padding:80px 0;
+    font-size: 12px;
+    text-align: center;
+
+}
+#changeid{
+    margin: 80px auto 30px;
+}
