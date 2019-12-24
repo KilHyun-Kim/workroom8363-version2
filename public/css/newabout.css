@@ -1,0 +1,10 @@
+/* About Us */
+.__aboutpage{
+    text-align: center;
+    line-height: 20px;
+}
+
+.__aboutpage .aboutus_image img{
+    width:80%;
+    height: 30%;
+}

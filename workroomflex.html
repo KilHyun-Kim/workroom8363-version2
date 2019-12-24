@@ -6,28 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>flex</title>
 
+    <link rel="stylesheet" href="/public/css/defaultwr.css">
+    
     <style>
-        body {
-            display:flex
-        }
-
-        
         .container{
-            flex-direction: row;
+            display:flex;
+            flex-direction: column;
             width: 70%;
             margin: 0 auto;
         }
         header {
-            padding-left: 20px;
             text-align: center;
-            font-size: 100px;
+            font-size: 80px;
+            margin-bottom: 20px;
+            margin-top: 40px;
         }
 
-        .contnet nav{
-            display:block;
-            width: 100%;
-            
-        }
+     
         .content nav ul {
             text-align: center;
             padding-bottom: 20px;
@@ -35,25 +30,49 @@
         } 
         .content nav ul li {
             display: inline-block;
+            position: relative;
             padding-top: 20px;
             margin-left: 70px;
-            position: relative;
-        }
-        .content nav ul li:first-child{
-            margin-left:50px;
         }
 
-        .content nav ul li:last-child{
-            float: right;
-            margin-right: 20px;
+        .content nav ul li:first-child{
+            margin-left:50px;
         }
         .content nav ul li a {
             color: #444;
             text-transform: uppercase;
-            font-size: 14px;
+            font-size: 11px;
+        }
+        
+        .content nav ul li:last-child{
+            float: right;
+            margin-right: 20px;
+            
+        }
+        .content nav ul li:last-child img {
+            width: 20px;
         }
 
+        nav a:hover{
+        color: #000;
+        }
 
+        nav a::before{
+            content: '';
+            display: block;
+            height: 5px;
+            width: 100%;
+            background-color:#444;
+            position: absolute;
+            top: 0;
+            width: 0%;
+            transition: all ease-in-out 100ms;
+        }
+
+        nav a:hover::before{
+            width:100%;
+        }
+       
         footer{
             margin-top: 80px;
             padding-bottom: 130px;
@@ -67,19 +86,25 @@
         footer .footer_container{
             display: flex;
         }
+        footer .footer_container .footer_info pre{
+            text-align: left;
+        }
+
         footer .footer_container .footer_info {
-            
-            flex-direction: column;
-            font-size: 8px;
+            flex-grow: 1;
+            font-size: 9px;
+        }
+        footer .footer_container .footer_info:nth-child(1){
+            flex-shrink: 1;
         }
 
+        footer .footer_container .footer_info:nth-child(2){
+            flex-shrink: 0;
+        }
+        footer .footer_container .footer_info:nth-child(3){
+            flex-shrink: 1;
+        }
 
-        .footer_container .footer_info:last-child{
-            float:right
-        }
-        main{
-            padding: 10px;
-        }
     </style>
 </head>
 <body>
@@ -95,13 +120,9 @@
                     <li><a href="/object">Object</a></li>
                     <li><a href="/onedayclass">Oneday Class</a></li>
                     <li><a href="/qna">Q & A</a></li>
-                    <li><a href="https://www.instagram.com/workroom8363/?igshid=1b6l8y8av4fq4" target="_blank"><img src="/image/insta.png" alt="instagram"></a></li>
+                    <li><a class="insta" href="https://www.instagram.com/workroom8363/?igshid=1b6l8y8av4fq4" target="_blank"><img src="./public/image/insta.png" alt="instagram"></a></li>
                 </ul>
             </nav>
-            
-        
-            
-            
         </section>
         <main>
             <h1>메인입니다</h1>

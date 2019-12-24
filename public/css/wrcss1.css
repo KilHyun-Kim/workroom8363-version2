@@ -149,16 +149,16 @@ body{
 
 /* object-image */
 
-.image_object{
+.arrival_image{
     margin-top: 30px;
 }
-.image_object ul li{  
+.arrival_image ul li{  
     display: inline-block;
     margin-left: 30px;
     margin-top: 30px;
   
 }
-.image_object ul li img {
+.arrival_image ul li img {
     width:500px;
     
 }
