@@ -1,14 +1,17 @@
 header{
-    
-    height: 100px;
     margin-bottom: 20px;
     margin-top: 40px;
 }
 
 .logo {
     text-align: center;
-    font-size: 100px;
     font-family: 'Alegreya Sans SC', sans-serif;
+    height: auto;
+    width: 100%;    
+}
+.logo a {
+    font-size: 100px;
+
 }
 
 
@@ -171,7 +174,7 @@ body{
 }
 
 .aboutus_container h2 {
-    margin : 50px 0px ;
+   
     font-family:'Noto Serif KR', serif;
 
 }
@@ -187,11 +190,14 @@ body{
     text-align: center;
     
 }
+.explan_explan{
+    height: 200px;
+}
 
 .onedayclass_container h1{
     margin : 60px auto;
     font-size: 5em;
-    font-family:'Nanum Pen Script', cursive;
+    font-family: 'Do Hyeon', sans-serif;
 }
 /* .bigPictureWrapper {
     position: absolute;
@@ -252,15 +258,18 @@ body{
 .ondayclass_explan .class_procedure {
     margin: 80px auto;
 }
+
 .ondayclass_explan h2, .onedayclass_map h2, .onedayclass_schedule h2{
     font-size: 3em;
-    font-family:'Nanum Pen Script', cursive;
+    font-family: 'Do Hyeon', sans-serif;
 }
 
 .onedayclass_schedule img {
     width: 80%;
 }
-
+.onedayclass_schedule .schedule_explain{
+   height: 200px;
+}
 
 /* scroll trigger */
 
@@ -401,7 +410,7 @@ display: inline-block;
 
 .infoArea li pre{
     font-family:'Noto Serif KR', serif;
-    font-size: 11px;
+    font-size: 13px;
     line-height: 16px;
     color: #000;
     padding: 15px 0 30px;

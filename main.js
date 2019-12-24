@@ -30,6 +30,7 @@ app.get('/', function(request, response){
     //var list = template.list(filelist);
     var html = template.HTML(title,script,
         body=`
+        <div class="">
             <div class="slideshow">
             <div class="slideshow_slides">
                 <a href=""><img src="image/slide-1.jpg" alt="slide1"></a>
@@ -50,14 +51,17 @@ app.get('/', function(request, response){
                 -->
             </div>
             </div>
+            <div>
+                <h2>New Arrival</h2>
+            </div>
             
             <div class="image_object">
             <ul class="image_ul"></ul>
             </div>
+        </div>
             `
         );response.send(html); 
 });
-
 app.get('/aboutus', function(request,response){
     var title = ' about us ';
     var script = '';
@@ -136,11 +140,10 @@ app.get('/object', function(request,response){
     
     var html = template.HTML(title,script,
         body = `
-        <div>
-        <h2>Object</h2>
-        </div>
-
         <div class="object_container">
+        <div>
+            <h2>Object</h2>
+        </div>
         <div class="object_list">
             <ul class="product_list">    
             </ul>
@@ -175,7 +178,7 @@ app.get('/Object/0', function(request,response){
         SIZE :  32cm * 11cm * 26cm
 
         STRAP : 60cm * 2cm'`,
-        price ='367,000',
+        price ='3,000',
         longImage = '/image/longpng.png'
         );
         response.send(html);
@@ -332,16 +335,17 @@ app.get('/onedayclass', function(request,response){
 
     <div class="ondayclass_explan" data-scroll>
         <div class="class_procedure">
-            <h1>원데이 클래스는 이렇게 진행됩니다.</h1>
+            <div class="explan_explan">
+                <h1>원데이 클래스는 이렇게 진행됩니다.</h1>
+            </div>
             <img src="/image/sequence.jpg">
-            </br>
-            </br>
-            <h2>＊ 원데이 클래스는 인스타그램 DM으로만 문의 받습니다. </h2>
+            <h2>＊ 원데이 클래스는 인스타그램 DM으로만 문의 받습니다 ＊</h2>
         </div>
-
     </div>
-    <div class="onedayclass_schedule" data-scroll   >
-        <h1>원데이 클래스 일정</h1>
+    <div class="onedayclass_schedule" data-scroll>
+        <div class="schedule_explain">
+            <h1>원데이 클래스 일정</h1>
+        </div>
         <img src="/image/Planner.png" alt="#">
     </div>
 
