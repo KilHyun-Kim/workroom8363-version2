@@ -512,7 +512,7 @@ app.get('/qna/1', function(request,response){
     response.send(html);
 
 });
-app.listen(5000, ()=> console.log('port 3000!'))
+app.listen(3000, ()=> console.log('port 3000!'))
 
 
 

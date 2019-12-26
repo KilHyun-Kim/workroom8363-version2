@@ -1,0 +1,35 @@
+
+.qna_container{
+    position: relative;
+    border: 1px solid #ddd;
+    margin: 0 auto ;
+    width: 70%;
+    line-height: 180%;
+    font-size:11px;
+    font-family: 'Noto Serif KR', serif;
+}
+
+
+.board_wrap{
+    position: relative;
+    width: 92%;
+    margin: 40px auto;
+}
+.board_top{
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 40px;
+    vertical-align: bottom;
+    font-size: 15px;
+    font-weight: bold;
+}
+.board_detail{
+    padding:80px 0;
+    font-size: 12px;
+    text-align: center;
+}
+.board_detail p strong {
+    font-size: 13px;
+}
+#changeid{
+    margin: 80px auto 30px;
+}

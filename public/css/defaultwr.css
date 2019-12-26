@@ -30,12 +30,17 @@ body {
 
     }
     h2 { 
-        margin : 50px 0px ;
         font-family:SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-        text-align: center;
+ 
     }
 
     pre {
         font-size: 87.5%;
         font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    .__explain{
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
     }

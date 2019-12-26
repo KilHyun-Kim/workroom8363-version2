@@ -186,7 +186,7 @@ body{
 
 /* Oneday Class */
 
-.onedayclass_container{
+.__objectpage{
     text-align: center;
     
 }
@@ -194,7 +194,7 @@ body{
     height: 200px;
 }
 
-.onedayclass_container h1{
+.__objectpage h1{
     margin : 60px auto;
     font-size: 5em;
     font-family: 'Do Hyeon', sans-serif;
@@ -335,7 +335,6 @@ display: inline-block;
 .product_list .product_listArray{
     position: relative;
     text-align: center;
-
 }
 
 .product_list img {
@@ -457,6 +456,9 @@ display: inline-block;
     font-family: 'Noto Serif KR', serif;
 }
 
+.table {
+    border: 1px solid #ddd;
+}
 
 .board_wrap{
     position: relative;
