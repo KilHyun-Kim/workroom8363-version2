@@ -45,3 +45,8 @@
       transition: opacity 1s ease;
 }
 
+#map {
+    height: 400px;
+    width: 80%;
+    margin: 0 auto;
+   }

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+  <style>
+    #mouseenter_{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="mouseenter_">
+    <p>MouseEnter : Mouse를 여기로 가져와주세요.</p>
+    <ul id="mouse_">
+      <li>HI</li>
+      <li>HI2</li>
+    </ul>
+  </div>
+
+  <script type="text/javascript">
+
+
+      // 마우스가 영역에 들어오면 실행 (mouseover와 비슷)
+      $('#mouseenter_').mouseenter(function () {
+        $('#mouseenter_').css('display','block')
+      });
+      $('#mouseenter_').mouseleave(function(){
+        $('#mouseenter_').css('display','none')
+      });
+  </script>
+  
+</body>
+</html>
+ 

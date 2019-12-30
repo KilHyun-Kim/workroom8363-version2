@@ -145,6 +145,45 @@ app.get('/onedayclass', function(req,res){
     <link rel="stylesheet" href="../css/newoneday.css">
     <script src="js/scrolltrigger.js"></script>
     <script src="/ScrollTrigger-master/ScrollTrigger.min.js"></script>
+    <script type = "text/javascript">
+        window.onload = function(){
+            var i = 1;
+            var tags = '';
+            while(i<34){
+                var tag = '<img src="/onedayimage/oneday('+i+').jpg">'
+                tags = tags + tag;
+                i = i + 1;
+            }
+            document.querySelector('.pictures').innerHTML = tags;
+        }    
+    </script>
+    <script>
+    function initMap() {
+        var workroom8363 = {lat: 35.863200, lng: 128.596000};
+        var markerTitle = "WorkRoom8363";
+        var markerMaxWidth = 500;
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 16,
+
+          center: workroom8363
+        });
+        var marker = new google.maps.Marker({
+          position: workroom8363,
+          map: map,
+          title: markerTitle
+        });
+        var infowindow = new google.maps.InfoWindow(
+            {
+                content : contentString,
+                maxWidth : markerMaxWidth
+            }
+        )
+       }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key= &callback=initMap">
+    </script>
+    
     `
     var html = newTemplate.HTML(script,
         main = `
@@ -154,39 +193,7 @@ app.get('/onedayclass', function(req,res){
             </div>
 
             <div class="pictures">
-                <img src="/onedayimage/oneday(1).jpg">
-                <img src="/onedayimage/oneday(2).jpg">
-                <img src="/onedayimage/onday(3).jpg">
-                <img src="/onedayimage/onday(4).jpg">
-                <img src="/onedayimage/onday(5).jpg">
-                <img src="/onedayimage/onday(6).jpg">
-                <img src="/onedayimage/oneday(7).jpg">
-                <img src="/onedayimage/oneday(8).jpg">
-                <img src="/onedayimage/onday(9).jpg">
-                <img src="/onedayimage/onday(10).jpg">
-                <img src="/onedayimage/onday(11).jpg">
-                <img src="/onedayimage/onday(12).jpg">
-                <img src="/onedayimage/onday(13).jpg">
-                <img src="/onedayimage/onday(14).jpg">
-                <img src="/onedayimage/onday(15).jpg">
-                <img src="/onedayimage/onday(16).jpg">
-                <img src="/onedayimage/onday(17).jpg">
-                <img src="/onedayimage/onday(18).jpg">
-                <img src="/onedayimage/onday(19).jpg">
-                <img src="/onedayimage/onday(20).jpg">
-                <img src="/onedayimage/onday(21).jpg">
-                <img src="/onedayimage/onday(22).jpg">
-                <img src="/onedayimage/onday(23).jpg">
-                <img src="/onedayimage/onday(24).jpg">
-                <img src="/onedayimage/onday(25).jpg">
-                <img src="/onedayimage/onday(26).jpg">
-                <img src="/onedayimage/onday(27).jpg">
-                <img src="/onedayimage/onday(28).jpg">
-                <img src="/onedayimage/onday(29).jpg">
-                <img src="/onedayimage/onday(30).jpg">
-                <img src="/onedayimage/onday(31).jpg">
-                <img src="/onedayimage/onday(32).jpg">
-                <img src="/onedayimage/oneday(33).jpg">
+                
             </div>
             <div class="onedayclass_explan" data-scroll>
                 <div class="class_procedure">
@@ -201,7 +208,7 @@ app.get('/onedayclass', function(req,res){
             </div>
             <div class="onedayclass_map" data-scroll>
                 <h1>찾아오시는 길</h1>
-                <img src="/image/mapWorkRoom8363.png" alt="map" />
+                <div id="map"></div>
                 <h2>＊  주소 : 대구광역시 중구 봉산문화2길 14 2층 </h2>
             </div>
         </div>
